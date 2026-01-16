@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Supermarket Chain</string>
+    <string-array name="branches">
+        <item>Nairobi HQ</item>
+        <item>Kisumu</item>
+        <item>Mombasa</item>
+        <item>Nakuru</item>
+        <item>Eldoret</item>
+    </string-array>
+</resources>

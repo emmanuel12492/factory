@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1039453007513",
+    "project_id": "factory-923e8",
+    "storage_bucket": "factory-923e8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039453007513:android:6aea2460723ef983281208",
+        "android_client_info": {
+          "package_name": "com.example.supermarket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039453007513-ioms8bp9usrv7f98f2i25l2tthnesv9o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCG1PjNLV2Dpg1HFYtC3PtTAioiH7huoaw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039453007513-ioms8bp9usrv7f98f2i25l2tthnesv9o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

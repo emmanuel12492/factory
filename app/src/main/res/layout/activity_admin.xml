@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADMIN DASHBOARD"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:elevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView android:text="Live Sales Report" android:textStyle="bold"/>
+                <TextView android:id="@+id/txtCokeTotal" android:text="Coke: 0 KES" android:layout_marginTop="8dp"/>
+                <TextView android:id="@+id/txtFantaTotal" android:text="Fanta: 0 KES" android:layout_marginTop="4dp"/>
+                <TextView android:id="@+id/txtSpriteTotal" android:text="Sprite: 0 KES" android:layout_marginTop="4dp"/>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#ccc" android:layout_marginVertical="10dp"/>
+
+                <TextView
+                    android:id="@+id/txtGrandTotal"
+                    android:text="GRAND TOTAL: 0 KES"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#009688"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restock Branch"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"/>
+
+        <Spinner
+            android:id="@+id/spRestockBranch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/branches"
+            android:minHeight="48dp"/>
+
+        <EditText
+            android:id="@+id/etRestockQty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Quantity to Add"
+            android:inputType="number"/>
+
+        <Button
+            android:id="@+id/btnRestock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update Stock"/>
+
+    </LinearLayout>
+</ScrollView>
