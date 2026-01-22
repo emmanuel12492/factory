@@ -1,75 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"> <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
 
-    <LinearLayout
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin Dashboard"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="24dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Restock Inventory"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="8dp"/>
+
+    <Spinner
+        android:id="@+id/spRestockBranch"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:entries="@array/branches"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/etRestockQty"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Quantity to Add"
+        android:textColor="#000000"
+        android:textColorHint="#757575"
+        android:inputType="number"
+        android:background="#FFFFFF"
+        android:padding="12dp"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btnRestock"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:text="Update Stock"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#00695C"
+        android:layout_marginBottom="16dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ADMIN DASHBOARD"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
+    <TextView
+        android:id="@+id/tvStockList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Loading stock..."
+        android:textColor="#000000"
+        android:padding="12dp"
+        android:background="#E0E0E0"
+        android:fontFamily="monospace"/>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:elevation="4dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#999999"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"/>
 
-                <TextView android:text="Live Sales Report" android:textStyle="bold"/>
-                <TextView android:id="@+id/txtCokeTotal" android:text="Coke: 0 KES" android:layout_marginTop="8dp"/>
-                <TextView android:id="@+id/txtFantaTotal" android:text="Fanta: 0 KES" android:layout_marginTop="4dp"/>
-                <TextView android:id="@+id/txtSpriteTotal" android:text="Sprite: 0 KES" android:layout_marginTop="4dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Financial Reports"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:layout_marginBottom="8dp"/>
 
-                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#ccc" android:layout_marginVertical="10dp"/>
+    <Button
+        android:id="@+id/btnViewReport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Generate Sales Report"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#00695C"/>
 
-                <TextView
-                    android:id="@+id/txtGrandTotal"
-                    android:text="GRAND TOTAL: 0 KES"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#009688"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/tvSalesReport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Report will appear here..."
+        android:textColor="#000000"
+        android:padding="16dp"
+        android:background="#B2DFDB"
+        android:layout_marginTop="16dp"
+        android:textSize="14sp"
+        android:fontFamily="monospace"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Restock Branch"
-            android:textStyle="bold"
-            android:layout_marginTop="30dp"/>
-
-        <Spinner
-            android:id="@+id/spRestockBranch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/branches"
-            android:minHeight="48dp"/>
-
-        <EditText
-            android:id="@+id/etRestockQty"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Quantity to Add"
-            android:inputType="number"/>
-
-        <Button
-            android:id="@+id/btnRestock"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Update Stock"/>
-
-    </LinearLayout>
+</LinearLayout>
 </ScrollView>

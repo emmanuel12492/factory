@@ -21,11 +21,14 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
+
+        // Bind views
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         tvRegister = findViewById(R.id.tvGoToRegister);
 
+        // Set click listeners
         btnLogin.setOnClickListener(v -> login());
 
         tvRegister.setOnClickListener(v ->
@@ -34,23 +37,37 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login() {
-        String email = etEmail.getText().toString();
-        String pass = etPassword.getText().toString();
+        // .trim() removes accidental spaces at the start or end
+        String email = etEmail.getText().toString().trim();
+        String pass = etPassword.getText().toString().trim();
 
-        if (email.isEmpty() || pass.isEmpty()) return;
+        // 1. Validation: Don't just return, tell the user what's wrong
+        if (email.isEmpty() || pass.isEmpty()) {
+            Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
+        // 2. Attempt Firebase Login
         mAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                // HARDCODED ADMIN CHECK FOR DEMO
-                // In a real app, check a User role in Firestore
+                Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show();
+
+                // 3. CHECK FOR ADMIN
+                // This exact email must match what you used in RegisterActivity
                 if (email.equals("admin@supermarket.com")) {
-                    startActivity(new Intent(this, AdminActivity.class));
+                    // Go to Admin Dashboard
+                    Intent intent = new Intent(this, AdminActivity.class);
+                    startActivity(intent);
                 } else {
-                    startActivity(new Intent(this, CustomerActivity.class));
+                    // Go to Customer Shop
+                    Intent intent = new Intent(this, CustomerActivity.class);
+                    startActivity(intent);
                 }
-                finish();
+                finish(); // Close LoginActivity so back button doesn't return here
             } else {
-                Toast.makeText(this, "Login Failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                // 4. Handle Errors (Wrong password, no internet, etc.)
+                String error = task.getException() != null ? task.getException().getMessage() : "Unknown error";
+                Toast.makeText(this, "Login Failed: " + error, Toast.LENGTH_LONG).show();
             }
         });
     }

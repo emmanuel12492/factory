@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Supermarket Chain</string>
+
     <string-array name="branches">
         <item>Nairobi HQ</item>
         <item>Kisumu</item>
@@ -7,4 +8,13 @@
         <item>Nakuru</item>
         <item>Eldoret</item>
     </string-array>
+
+    <string name="admin_dashboard">ADMIN DASHBOARD</string>
+    <string name="live_sales">Live Sales Report</string>
+    <string name="total_rev_default">Total Revenue: 0 KES</string>
+    <string name="stock_levels">Current Stock Levels</string>
+    <string name="loading_stock">Loading stock data...</string>
+    <string name="restock_branch">Restock Branch</string>
+    <string name="qty_hint">Quantity to Add</string>
+    <string name="update_stock_btn">Update Stock</string>
 </resources>

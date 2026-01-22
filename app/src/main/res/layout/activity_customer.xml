@@ -3,58 +3,106 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="24dp"
+    android:background="#E0F2F1"> <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Place Your Order"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    android:textColor="#00695C"
+    android:layout_marginBottom="24dp"
+    android:layout_gravity="center_horizontal"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select Branch"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="8dp"/>
 
     <Spinner
         android:id="@+id/spBranch"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
         android:entries="@array/branches"
-        android:minHeight="48dp"/>
+        android:layout_marginBottom="16dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select Drink (100 KES)"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="8dp"/>
 
     <RadioGroup
         android:id="@+id/rgDrinks"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <RadioButton android:id="@+id/rbCoke" android:text="Coke" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-        <RadioButton android:id="@+id/rbFanta" android:text="Fanta" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-        <RadioButton android:id="@+id/rbSprite" android:text="Sprite" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton
+            android:id="@+id/rbCoke"
+            android:text="Coke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:id="@+id/rbFanta"
+            android:text="Fanta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:id="@+id/rbSprite"
+            android:text="Sprite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
     </RadioGroup>
 
     <EditText
         android:id="@+id/etQuantity"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginBottom="12dp"
+        android:background="#FFFFFF"
+        android:padding="12dp"
         android:hint="Quantity"
-        android:inputType="number"
-        android:layout_marginTop="16dp"/>
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/etCustomerName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="12dp"
+        android:background="#FFFFFF"
+        android:padding="12dp"
+        android:hint="Enter Your Name"
+        android:inputType="textPersonName"/>
 
     <EditText
         android:id="@+id/etPhone"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="M-Pesa Phone (2547...)"
-        android:inputType="phone"
-        android:layout_marginTop="16dp"/>
+        android:layout_height="50dp"
+        android:layout_marginBottom="24dp"
+        android:background="#FFFFFF"
+        android:padding="12dp"
+        android:hint="M-Pesa Phone (07...)"
+        android:inputType="phone"/>
 
     <Button
         android:id="@+id/btnBuy"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:text="Pay via M-Pesa &amp; Order"
-        android:layout_marginTop="24dp"/>
+        android:backgroundTint="#009688"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
 
 </LinearLayout>
